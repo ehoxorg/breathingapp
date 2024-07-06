@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, Platform } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import MainScrollView from '@/components/MainScrollView';
+import CustomDropdownView from '@/components/CustomDropdownView';
 
 export default function HomeScreen() {
   return (
@@ -19,7 +20,7 @@ export default function HomeScreen() {
         </ThemedText>
         <Text style={styles.result}>Relieves stress, reduces anxiety and calms the nerves.</Text>
       </ThemedView>
-
+      <CustomDropdownView></CustomDropdownView>
     </MainScrollView>
   );
 }

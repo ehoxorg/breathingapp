@@ -1,8 +1,5 @@
 import type { PropsWithChildren, ReactElement } from 'react';
 import { StyleSheet, useColorScheme } from 'react-native';
-import * as Font from 'expo-font';
-
-
 import { ThemedView } from '@/components/ThemedView';
 
 const HEADER_HEIGHT = 250;
@@ -24,15 +21,13 @@ export default function MainScrollView({
 const styles = StyleSheet.create({
   container: {
     justifyContent:'space-between',
-    alignItems:'center',
     fontFamily:'AsapItalic',
     flex:1,
   },
   content: {
     padding: 32,
-    gap: 64,
+    gap: 40,
     overflow: 'hidden',
     alignItems:'center',
-    fontFamily:'AsapItalic',
   },
 });
