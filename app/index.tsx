@@ -1,8 +1,8 @@
-import { Image, StyleSheet, Text, Platform } from 'react-native';
-import { ThemedText } from '@/components/ThemedText';
+import { Image, StyleSheet, Text} from 'react-native';
 import { ThemedView } from '@/components/ThemedView';
 import MainScrollView from '@/components/MainScrollView';
-import CustomDropdownView from '@/components/CustomDropdownView';
+import CustomDropdownView from '@/components/CustomDropdown';
+import CustomButton from '@/components/CustomButton';
 
 export default function HomeScreen() {
   return (
@@ -14,14 +14,15 @@ export default function HomeScreen() {
         <Text style={styles.title} >4-7-8 Breathing</Text>
       </ThemedView>
       <ThemedView >
-        <ThemedText style={styles.instructions}>Inhale for a count of <Text style={styles.bold}>4</Text>.
+        <Text style={styles.instructions}>Inhale for a count of <Text style={styles.bold}>4</Text>.
         Hold for a count of <Text style={styles.bold}>7</Text>. 
         Exhale for a count of <Text style={styles.bold}>8</Text>. 
-        </ThemedText>
+        </Text>
         <Text style={styles.result}>Relieves stress, reduces anxiety and calms the nerves.</Text>
       </ThemedView>
       <CustomDropdownView></CustomDropdownView>
-    </MainScrollView>
+      <CustomButton title='Start' onPress={() => console.log('PRESSED START')} />
+      </MainScrollView>
   );
 }
 

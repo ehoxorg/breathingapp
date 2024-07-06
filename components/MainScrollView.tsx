@@ -24,10 +24,16 @@ const styles = StyleSheet.create({
     fontFamily:'AsapItalic',
     flex:1,
   },
+  // content: {
+  //   padding: 32,
+  //   gap: 40,
+  //   overflow: 'hidden',
+  //   alignItems:'center',
+  // },
   content: {
-    padding: 32,
-    gap: 40,
-    overflow: 'hidden',
-    alignItems:'center',
-  },
+    flex: 1,                // Takes up all available space
+    justifyContent: 'space-between', // Distributes space evenly between children
+    alignItems: 'center',   // Centers children horizontally (in this case, the button)
+    padding: 32,            // Optional: Adds padding around the edges of the container
+  }
 });
