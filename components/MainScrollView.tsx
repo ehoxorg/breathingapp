@@ -23,10 +23,10 @@ export default function MainScrollView({
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent:'center',
-    flex: 1,
-    alignItems:'flex-end',
+    justifyContent:'space-between',
+    alignItems:'center',
     fontFamily:'AsapItalic',
+    flex:1,
   },
   content: {
     padding: 32,

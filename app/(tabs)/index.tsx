@@ -1,6 +1,4 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
+import { Image, StyleSheet, Text, Platform } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import MainScrollView from '@/components/MainScrollView';
@@ -12,11 +10,14 @@ export default function HomeScreen() {
         source={require('@/assets/images/plectrum.png')}
       />
       <ThemedView >
-        <ThemedText style={styles.title}>4-7-8 Breathing</ThemedText>
+        <Text style={styles.title} >4-7-8 Breathing</Text>
       </ThemedView>
       <ThemedView >
-        <ThemedText style={styles.explanation}>Inhale for 4 seconds, hold for 7 seconds and exhale for 8 seconds. 
-        Relieves stress, reduces anxiety and calms the nerves.</ThemedText>
+        <ThemedText style={styles.instructions}>Inhale for a count of <Text style={styles.bold}>4</Text>.
+        Hold for a count of <Text style={styles.bold}>7</Text>. 
+        Exhale for a count of <Text style={styles.bold}>8</Text>. 
+        </ThemedText>
+        <Text style={styles.result}>Relieves stress, reduces anxiety and calms the nerves.</Text>
       </ThemedView>
 
     </MainScrollView>
@@ -24,17 +25,28 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  title: {
+  bold: {
     fontFamily:'AsapBold',
   },
   logo: {
-    alignItems: 'center',
-    maxWidth:300,
-    maxHeight:200,
+    alignItems: 'flex-start',
+    maxWidth:100,
+    maxHeight:80,
     resizeMode:'contain',
   },
-  explanation: {
-    fontSize:16,
-    fontFamily:'AsapRegular',
+  title: {
+    fontFamily:'AsapBold',
+    // resizeMode:'contain',
+    fontSize:37,
+  },
+  instructions: {
+    textAlign:'center',
+    fontSize:20,
+    fontFamily:'AsapItalic',
+  },
+  result: {
+    marginTop:10,
+    textAlign:'center',
+    fontSize:8,
   }
 });
