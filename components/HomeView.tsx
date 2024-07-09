@@ -1,20 +1,19 @@
-import type { PropsWithChildren, ReactElement } from 'react';
-import { StyleSheet, useColorScheme } from 'react-native';
-import { ThemedView } from '@/components/ThemedView';
+import type { PropsWithChildren } from 'react';
+import { StyleSheet, useColorScheme,View} from 'react-native';
 
 const HEADER_HEIGHT = 250;
 
 type Props = PropsWithChildren<{
 }>;
 
-export default function MainScrollView({
+export default function HomeView({
   children,
 }: Props) {
   const colorScheme = useColorScheme() ?? 'light';
   return (
-    <ThemedView style={styles.container}>
-        <ThemedView style={styles.content}>{children}</ThemedView>
-    </ThemedView>
+    <View style={styles.container}>
+        <View style={styles.content}>{children}</View>
+    </View>
   );
 }
 
@@ -24,12 +23,6 @@ const styles = StyleSheet.create({
     fontFamily:'AsapItalic',
     flex:1,
   },
-  // content: {
-  //   padding: 32,
-  //   gap: 40,
-  //   overflow: 'hidden',
-  //   alignItems:'center',
-  // },
   content: {
     flex: 1,                // Takes up all available space
     justifyContent: 'space-between', // Distributes space evenly between children

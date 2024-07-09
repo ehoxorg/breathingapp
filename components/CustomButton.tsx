@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Link } from "expo-router";
 
 // Props interface
 interface CustomButtonProps {
@@ -10,9 +11,11 @@ interface CustomButtonProps {
 // Button component using TypeScript
 const CustomButton: React.FC<CustomButtonProps> = ({ onPress, title }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.button}>
-      <Text style={styles.text}>{title}</Text>
-    </TouchableOpacity>
+    <Link href="exercise"  asChild>
+      <TouchableOpacity onPress={onPress} style={styles.button}>
+        <Text style={styles.text}>{title}</Text>
+      </TouchableOpacity>
+    </Link>
   );
 };
 
