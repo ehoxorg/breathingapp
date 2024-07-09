@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { TouchableOpacity, View, StyleSheet, Animated } from 'react-native';
-import { Link } from "expo-router";
 import { AntDesign } from '@expo/vector-icons';
+import { useLocalSearchParams, useGlobalSearchParams, Link } from 'expo-router';
 
 const ExerciseScreen: React.FC = () => {
+    const local = useLocalSearchParams();
+
+    const { rounds } = useLocalSearchParams<{ rounds?: string }>();
+
+    console.log('You selected: '+rounds + ' rounds');
     const [fadeAnimReady] = useState(new Animated.Value(0));
     const [fadeAnimSteady] = useState(new Animated.Value(0));
     const [fadeAnimGo] = useState(new Animated.Value(0));
@@ -77,20 +82,17 @@ const ExerciseScreen: React.FC = () => {
 const styles = StyleSheet.create({
     exerciseTitle: {
         fontSize: 30,
-        fontWeight: '500',
         fontFamily: 'AsapRegular',
         textAlign: 'center',
     },
     exerciseAction: {
         fontSize: 50,
-        fontWeight: '700',
-        fontFamily: 'AsapRegular',
+        fontFamily: 'AsapMedium',
         textAlign: 'center',
     },
     exerciseCountdown: {
         fontSize: 230,
-        fontWeight: '900',
-        fontFamily: 'AsapRegular',
+        fontFamily: 'AsapBold',
         textAlign: 'center',
     },
     button: {
