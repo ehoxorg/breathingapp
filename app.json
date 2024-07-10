@@ -4,27 +4,29 @@
     "slug": "breathingapp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "icon": "./assets/images/logo48.png",
+    "scheme": "breathingapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/logo128.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#f6e9c7"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "package": "org.ehox.breathingapp",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/logo128.png",
+        "backgroundColor": "#f6e9c7"
       }
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/logo128.png"
     },
     "plugins": [
       "expo-router",
@@ -37,12 +39,20 @@
             "./assets/fonts/Asap-Italic.otf",
             "./assets/fonts/Asap-Medium.otf",
             "./assets/fonts/Asap-Symbol.otf"
-            ]
+          ]
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "5d24f02e-2e56-42b0-863f-9a15fa388cd1"
+      }
     }
   }
 }
