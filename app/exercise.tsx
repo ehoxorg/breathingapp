@@ -161,16 +161,19 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontFamily: 'AsapRegular',
         textAlign: 'center',
+        color: '#6c7697',
     },
     exerciseAction: {
         fontSize: 70,
         fontFamily: 'AsapMedium',
         textAlign: 'center',
+        color: '#6c7697',
     },
     exerciseCountdown: {
         fontSize: 230,
         fontFamily: 'AsapBold',
         textAlign: 'center',
+        color: '#6c7697',
     },
     button: {
         flex: 1,
@@ -180,11 +183,13 @@ const styles = StyleSheet.create({
     },
     main: {
         flex: 1,
+        backgroundColor: '#f6e9c7',
     },
     instructions: {
         flex: 6,
         alignItems: 'stretch',
         justifyContent: 'center',
+        color: '#6c7697',
     },
     ending: {
         flex: 1,
@@ -196,6 +201,7 @@ const styles = StyleSheet.create({
         fontFamily: 'AsapBold',
         textAlign: 'center',
         marginBottom: 20, // Adds some space between the text and the button
+        color: '#6c7697',
     },
     closeButton: {
         justifyContent: 'center',

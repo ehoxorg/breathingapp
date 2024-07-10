@@ -60,10 +60,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 32,
+    backgroundColor: '#f6e9c7',
+    color: '#6c7697',
   },
   logoContainer: {
     alignItems: 'center',
     marginBottom: 20,
+    color: '#6c7697',
   },
   logo: {
     width: 100,
@@ -74,6 +77,7 @@ const styles = StyleSheet.create({
     fontFamily: 'AsapBold',
     fontSize: 37,
     marginTop: 10,  // Ensures the title is a bit closer to the logo
+    color: '#6c7697',
   },
   instructions: {
     textAlign: 'center',
@@ -81,12 +85,14 @@ const styles = StyleSheet.create({
     fontFamily: 'AsapItalic',
     marginTop: 20,
     marginBottom: 10,
+    color: '#6c7697',
   },
   result: {
     textAlign: 'center',
     fontSize: 16,
     fontFamily: 'AsapItalic',
     marginBottom: 20,
+    color: '#6c7697',
   },
   input: {
     fontSize: 15,
