@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import RNPickerSelect from 'react-native-picker-select';
+import { Picker } from '@react-native-picker/picker';
 import { Link } from "expo-router";
 
 export default function HomeScreen() {
   const [selectedValue, setSelectedValue] = useState(4);
 
   const options = [
-    { label: '1 ROUND', value: 1 },
-    { label: '2 ROUNDS', value: 2 },
-    { label: '3 ROUNDS', value: 3 },
-    { label: '4 ROUNDS', value: 4 },
-    { label: '5 ROUNDS', value: 5 },
-    { label: '6 ROUNDS', value: 6 },
-    { label: '7 ROUNDS', value: 7 },
-    { label: '8 ROUNDS', value: 8 },
+    { label: '1', value: 1 },
+    { label: '2', value: 2 },
+    { label: '3', value: 3 },
+    { label: '4', value: 4 },
+    { label: '5', value: 5 },
+    { label: '6', value: 6 },
+    { label: '7', value: 7 },
+    { label: '8', value: 8 },
   ];
 
   return (
@@ -24,7 +24,7 @@ export default function HomeScreen() {
           style={styles.logo}
           source={require('@/assets/images/plectrum.png')}
         />
-        <Text style={styles.title}>4-7-8 Breathing</Text>
+        <Text style={styles.title}>4-7-8 breathing</Text>
       </View>
       <Text style={styles.instructions}>
         Inhale for a count of <Text style={styles.bold}>4</Text>.
@@ -32,20 +32,21 @@ export default function HomeScreen() {
         Exhale for a count of <Text style={styles.bold}>8</Text>. 
       </Text>
       <Text style={styles.result}>Relieves stress, reduces anxiety and calms the nerves.</Text>
-      <RNPickerSelect
-        items={options}
-        style={{
-          inputIOS: styles.input,
-          inputAndroid: styles.input,
-          iconContainer: {
-            top: 10,
-            right: 10,
-          },
-        }}
-        onValueChange={(value) => setSelectedValue(value)}
-        value={selectedValue}
-        useNativeAndroidPickerStyle={false} // Disables native styling to ensure consistency
-      />
+      <View style={styles.pickerContainer}>
+        <View style={{borderBottomWidth: 1,borderColor: '#6c7697',}}>
+        <Picker
+          selectedValue={selectedValue}
+          onValueChange={(itemValue) => setSelectedValue(itemValue)}
+          style={styles.picker}
+          itemStyle={styles.pickerItem}
+        >
+          {options.map((option) => (
+            <Picker.Item label={option.label} value={option.value} key={option.value} />
+          ))}
+        </Picker>
+        </View>
+        <Text style={{color:'#6c7697'}}>round(s)</Text>
+      </View>
       <Link href={"exercise?rounds="+selectedValue} asChild>
         <TouchableOpacity onPress={() => console.log('PRESSED START')} style={styles.button}>
           <Text style={styles.buttonText}>Start</Text>
@@ -91,16 +92,26 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     fontFamily: 'AsapItalic',
-    marginBottom: 20,
     color: '#6c7697',
   },
-  input: {
-    fontSize: 15,
-    borderColor: '#6c7697',
-    borderBottomWidth: 1,
+  pickerContainer: {
+    marginTop: 100,
+    flexDirection: 'row',
+    marginBottom: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 200, // Set the width of the container
+  },
+  picker: {
+    height: 50,
+    width: 200, // Set the width of the picker to be narrower
     color: '#6c7697',
-    padding: 15,
-    textAlign: 'center',
+  },
+  pickerItem: {
+    textAlign: 'center', // iOS text alignment
+    color: '#6c7697',
+    fontFamily:'AsapBold',
+    fontSize: 15,
   },
   button: {
     backgroundColor: '#6c7697',
@@ -112,7 +123,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 2,
     elevation: 5,
-    width: '70%',
+    width: '50%',
     alignSelf: 'center',
     marginTop: 20,
   },

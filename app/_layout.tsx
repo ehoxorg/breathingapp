@@ -14,7 +14,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
+  const [loaded, error] = useFonts({
     AsapRegular: require('../assets/fonts/Asap-Regular.otf'),
     AsapBold: require('../assets/fonts/Asap-Bold.otf'),
     AsapItalic: require('../assets/fonts/Asap-Italic.otf'),
@@ -23,12 +23,12 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    if (loaded) {
+    if (loaded || error) {
       SplashScreen.hideAsync();
     }
-  }, [loaded]);
+  }, [loaded, error]);
 
-  if (!loaded) {
+  if (!loaded && !error) {
     return null;
   }
 
