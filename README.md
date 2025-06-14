@@ -1,4 +1,26 @@
-# App assisting the **4-7-8 breathing technique**
+# Mobile App assisting the **4-7-8 breathing technique**
+Simple mobile app that counts down seconds for each phase:
+Phase | Countdown
+--- | ---
+| Inhale | 4 seconds|
+| Hold| 7 seconds|
+| Exhale| 8 seconds|
+
+It assists the user when performing the **[4-7-8 breathing technique](https://www.healthline.com/health/4-7-8-breathing#how-to-do-it)** 
+
+The user can choose from 1 to 8 rounds of repetition. 
+
+Developed in React Native and Expo in 2024. 
+
+# Screenshots
+
+<img src="https://github.com/user-attachments/assets/eef073d1-0046-4220-9acb-c54232fae08f"  width="180" />
+<img src="https://github.com/user-attachments/assets/0b5af1b5-b1f6-4408-974f-1b9776cb631e"  width="180" />
+<img src="https://github.com/user-attachments/assets/293720e8-07cc-4cc7-8637-616cf5a220b0"  width="180" />
+<img src="https://github.com/user-attachments/assets/cb972cad-eb07-4f94-8734-14a8058ada21"  width="180" />
+<img src="https://github.com/user-attachments/assets/590c57d3-1cd7-4262-9ff1-ffc13196a3f4"  width="180" />
+
+# Development
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
